@@ -19,3 +19,6 @@ public/
 ## Fallback:
 Se o vídeo não estiver disponível, o fundo preto será exibido como fallback.
 
+
+
+
