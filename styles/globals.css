@@ -1,0 +1,303 @@
+@import url('https://fonts.cdnfonts.com/css/pp-neue-montreal');
+@import url('https://fonts.googleapis.com/css2?family=Satoshi:wght@400;500;700;800&display=swap');
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --background: #0A0A0A;
+  --foreground: #FFFFFF;
+  
+  /* Solid Tech Premium Dark Theme */
+  --background-primary: #0A0A0A;      /* Preto absoluto */
+  --background-secondary: #121212;    /* Cinza grafite */
+  --background-tertiary: #1A1A1A;     /* Superfície elevada */
+  --background-surface: #121212;      /* Cards e elementos */
+  --background-glass: rgba(255, 255, 255, 0.05); /* Glass effect */
+  
+  --text-primary: #FFFFFF;            /* Branco puro */
+  --text-secondary: #E6E6E6;          /* Cinza claro */
+  --text-muted: #B3B3B3;              /* Cinza médio */
+  --text-disabled: #666666;           /* Cinza escuro */
+  
+  --accent-primary: #FDB927;          /* Dourado vibrante */
+  --accent-secondary: #FFD14F;        /* Amarelo claro (hover) */
+  --accent-tertiary: #FFB600;         /* Para gradientes */
+  --accent-success: #10B981;          /* Verde success */
+  
+  --blue-contrast: #1B2A40;           /* Azul petróleo escuro */
+  
+  --border-primary: #2A2A2A;         /* Bordas sutis */
+  --border-secondary: #1A1A1A;       /* Bordas secundárias */
+  --border-accent: #FDB927;           /* Borda dourada */
+  
+  --hover-glow: #FDB927;              /* Glow dourado */
+  --shadow-primary: rgba(253, 185, 39, 0.4); /* Sombra dourada */
+  --shadow-secondary: rgba(253, 185, 39, 0.2); /* Sombra suave */
+  
+  --gradient-primary: linear-gradient(135deg, #FDB927, #FFB600);
+  --gradient-secondary: linear-gradient(135deg, #FDB927 0%, #FFB600 100%);
+  --gradient-tertiary: linear-gradient(135deg, #FFB600 0%, #FDB927 100%);
+  --gradient-glass: linear-gradient(135deg, rgba(255,255,255,0.1) 0%, rgba(255,255,255,0.05) 100%);
+}
+
+@layer base {
+  * {
+    @apply border-border-primary;
+  }
+  
+  html {
+    scroll-behavior: smooth;
+    font-feature-settings: 'cv02', 'cv03', 'cv04', 'cv11';
+  }
+  
+  body {
+    background-color: var(--background-primary);
+    color: var(--text-primary);
+    font-family: 'PP Neue Montreal', 'Satoshi', sans-serif;
+    font-weight: 400;
+    font-style: normal;
+    font-display: swap;
+    letter-spacing: 0.02em;
+    line-height: 1.5;
+    font-feature-settings: 'rlig' 1, 'calt' 1;
+    scroll-behavior: smooth;
+  }
+  
+  /* ======= Títulos (mesmo padrão da Kirvano) ======= */
+  h1, h2, h3 {
+    font-family: 'PP Neue Montreal', 'Satoshi', sans-serif;
+    font-weight: 700;
+    letter-spacing: -0.03em;
+    line-height: 1.1;
+    text-wrap: balance;
+  }
+  
+  h1 {
+    @apply text-6xl md:text-7xl lg:text-8xl;
+    line-height: 1.05;
+    background: var(--gradient-primary);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+  
+  h2 {
+    @apply text-5xl md:text-6xl lg:text-7xl;
+    line-height: 1.1;
+  }
+  
+  h3 {
+    @apply text-4xl md:text-5xl;
+    line-height: 1.2;
+  }
+  
+  /* ======= Subtítulos ======= */
+  h4, h5, h6 {
+    font-family: 'PP Neue Montreal', 'Satoshi', sans-serif;
+    font-weight: 500;
+    letter-spacing: -0.01em;
+  }
+  
+  h4 {
+    @apply text-3xl md:text-4xl;
+    line-height: 1.3;
+  }
+  
+  h5 {
+    @apply text-2xl md:text-3xl;
+    line-height: 1.4;
+  }
+  
+  h6 {
+    @apply text-xl md:text-2xl;
+    line-height: 1.5;
+  }
+  
+  /* ======= Textos leves ======= */
+  p, span, a, li {
+    font-family: 'PP Neue Montreal', 'Satoshi', sans-serif;
+    font-weight: 300;
+    color: #d4d4d4;
+    line-height: 1.6;
+    text-wrap: pretty;
+  }
+}
+
+@layer components {
+  .btn {
+    @apply inline-flex items-center justify-center px-8 py-4 text-sm font-medium rounded-2xl transition-all duration-500 focus:outline-none focus:ring-2 focus:ring-offset-2 relative overflow-hidden;
+  }
+  
+  .btn-primary {
+    @apply btn text-black focus:ring-[#fdb927];
+    background: linear-gradient(135deg, #FDB927, #FFB600);
+    box-shadow: 0 4px 15px rgba(253, 185, 39, 0.4);
+    border-radius: 9999px;
+    font-weight: 600;
+    transition: all 0.3s ease-in-out;
+    position: relative;
+    overflow: hidden;
+  }
+  
+  .btn-primary::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(255,255,255,0.2), transparent);
+    transition: left 0.5s;
+  }
+  
+  .btn-primary:hover::before {
+    left: 100%;
+  }
+  
+  .btn-primary:hover {
+    filter: brightness(1.1);
+    transform: scale(1.03);
+    box-shadow: 0 8px 25px rgba(253, 185, 39, 0.6);
+  }
+  
+  .btn-secondary {
+    @apply btn bg-background-surface text-text-primary border border-border-primary hover:bg-background-tertiary focus:ring-[#fdb927];
+  }
+  
+  .btn-outline {
+    @apply btn border border-border-secondary text-text-primary hover:bg-background-surface hover:border-[#fdb927] focus:ring-[#fdb927];
+  }
+  
+  .btn-ghost {
+    @apply btn text-text-secondary hover:bg-background-surface hover:text-text-primary focus:ring-[#fdb927];
+  }
+  
+  .btn-glass {
+    @apply btn text-text-primary focus:ring-[#fdb927];
+    background: var(--background-glass);
+    backdrop-filter: blur(20px);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+  }
+  
+  .btn-glass:hover {
+    background: rgba(255, 255, 255, 0.1);
+    border-color: rgba(255, 255, 255, 0.2);
+  }
+  
+  .section-padding {
+    @apply py-24 md:py-32 lg:py-40;
+  }
+  
+  .container-custom {
+    @apply max-w-7xl mx-auto px-6 sm:px-8 lg:px-12;
+  }
+  
+  .card {
+    @apply rounded-3xl transition-all duration-700 ease-in-out border;
+    background: rgba(255, 255, 255, 0.05);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(15px);
+    border-radius: 20px;
+    transition: all 0.4s ease;
+  }
+  
+  .card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 0 20px rgba(253, 185, 39, 0.1);
+    background: rgba(255, 255, 255, 0.08);
+  }
+  
+  .card-glass {
+    @apply rounded-3xl transition-all duration-500 border;
+    background: var(--background-glass);
+    backdrop-filter: blur(20px);
+    border-color: rgba(255, 255, 255, 0.1);
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
+    position: relative;
+    overflow: hidden;
+  }
+  
+  .card-glass::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 1px;
+    background: var(--gradient-primary);
+    opacity: 0.5;
+  }
+  
+  .card-glass:hover {
+    background: rgba(255, 255, 255, 0.08);
+    border-color: rgba(255, 255, 255, 0.2);
+    box-shadow: 0 12px 50px rgba(0, 0, 0, 0.4);
+    transform: translateY(-4px);
+  }
+  
+  .gradient-text {
+    background: var(--gradient-primary);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+  
+  .gradient-bg {
+    background: var(--background-primary);
+  }
+  
+  .gradient-bg-hero {
+    background: var(--background-primary);
+  }
+  
+  .glass-effect {
+    background: var(--background-glass);
+    backdrop-filter: blur(20px);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+  }
+  
+  .floating {
+    @apply animate-float;
+  }
+  
+  .glow-effect {
+    @apply animate-glow;
+  }
+  
+  .shimmer {
+    @apply relative overflow-hidden;
+  }
+  
+  .shimmer::before {
+    content: '';
+    @apply absolute inset-0 -translate-x-full;
+    background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.1), transparent);
+    animation: shimmer 2s infinite;
+  }
+  
+  .text-gradient {
+    background: linear-gradient(90deg, #ffffff 0%, #8a8a8a 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+}
+
+@layer utilities {
+  .text-balance {
+    text-wrap: balance;
+  }
+  
+  .animation-delay-200 {
+    animation-delay: 200ms;
+  }
+  
+  .animation-delay-400 {
+    animation-delay: 400ms;
+  }
+  
+  .animation-delay-600 {
+    animation-delay: 600ms;
+  }
+}
