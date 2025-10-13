@@ -301,3 +301,16 @@
     animation-delay: 600ms;
   }
 }
+
+/* ======= Estilo Kirvano para Desktop ======= */
+@media (min-width: 1024px) {
+  .headline-title {
+    font-family: "Archivo", sans-serif;
+    font-weight: 800;
+    font-size: 24px;
+    line-height: 120%;
+    text-align: center;
+    color: #ffffff;
+  }
+
+}

@@ -52,15 +52,15 @@ export default function Hero() {
       {/* Overlay escura */}
       <div className="absolute inset-0 bg-black/60" />
 
-      <div className="relative z-10 text-center flex flex-col items-center justify-center px-4" style={{marginTop: 'clamp(8rem, 15vw, 19rem)'}}>
+        <div className="relative z-10 text-center flex flex-col items-center justify-center px-4 mt-[-21rem] md:mt-[-4rem]">
             <AnimatedSection direction="up" delay={0.4}>
-          <h1 className="font-neue font-bold text-2xl sm:text-3xl md:text-4xl lg:text-5xl xl:text-6xl tracking-tight leading-[1.2] text-center mb-2 px-4" style={{color: 'white', background: 'none', WebkitBackgroundClip: 'unset', WebkitTextFillColor: 'white', backgroundClip: 'unset'}}>
+          <h1 className="headline-title font-neue font-bold text-2xl sm:text-3xl md:text-4xl lg:text-5xl xl:text-6xl tracking-tight leading-[1.2] text-center mb-2 px-4" style={{color: 'white', background: 'none', WebkitBackgroundClip: 'unset', WebkitTextFillColor: 'white', backgroundClip: 'unset', transform: 'scale(0.7586)'}}>
             Venda mais, com menos complicação<br/>
             Tudo o que você precisa, em um só lugar
           </h1>
-          <p className="font-neue text-xs sm:text-sm md:text-base lg:text-lg text-white text-center mb-6 sm:mb-8 max-w-xs sm:max-w-md md:max-w-2xl lg:max-w-3xl mx-auto leading-normal font-normal px-4">
-            A plataforma definitiva para a creator economy te ajuda a transformar seu<br/>
-            conhecimento em negócio digital
+          <p className="font-neue text-sm sm:text-base md:text-lg lg:text-xl text-white text-center mb-6 sm:mb-8 max-w-xs sm:max-w-md md:max-w-2xl lg:max-w-3xl mx-auto leading-normal font-normal px-4">
+            <span className="block md:hidden">A plataforma definitiva para a creator economy te ajuda a transformar seu conhecimento<br/>em negócio digital</span>
+            <span className="hidden md:block">A plataforma definitiva para a creator economy te ajuda a transformar seu<br/>conhecimento em negócio digital</span>
           </p>
             </AnimatedSection>
 
@@ -69,8 +69,8 @@ export default function Hero() {
             variant="primary" 
             size="sm"
             onClick={() => console.log('Cadastro iniciado')}
-            className="group font-bold text-sm sm:text-base"
-            style={{paddingTop: '0.2rem', paddingBottom: '0.2rem', paddingLeft: '1rem', paddingRight: '1rem'}}
+            className="group font-bold text-lg sm:text-xl"
+            style={{paddingTop: '0rem', paddingBottom: '0rem', paddingLeft: '0rem', paddingRight: '0rem', transform: 'scale(0.7)'}}
             textColor="white"
           >
             Cadastre-se gratuitamente
