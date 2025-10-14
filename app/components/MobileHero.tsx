@@ -55,22 +55,20 @@ export default function MobileHero() {
       <div className="relative z-10 text-center flex flex-col items-center justify-center px-4 mt-[-21rem]">
         <AnimatedSection direction="up" delay={0.4}>
         <h1
-
-        className="font-neue font-extrabold text-[28px] sm:text-[36px] leading-[1.35] text-center mb-2 px-4 tracking-normal text-white"
+        className="font-neue font-extrabold text-[25px] sm:text-[33px] text-center mb-2 px-4 tracking-normal text-white space-y-[8px] sm:space-y-[14px]"
         style={{
-          color: '#fff',
-          background: 'none',
-          WebkitBackgroundClip: 'unset',
-          backgroundClip: 'unset',
-          WebkitTextFillColor: '#fff'
+            color: '#fff',
+            background: 'none',
+            WebkitBackgroundClip: 'unset',
+            backgroundClip: 'unset',
+            WebkitTextFillColor: '#fff'
         }}
-      >
-        
-         <span className="block font-neue font-extrabold whitespace-nowrap">Venda mais,</span>
-         <span className="block font-neue font-extrabold whitespace-nowrap">com menos complicação.</span>
-         <span className="block font-neue font-extrabold whitespace-nowrap">Tudo o que você precisa,</span>
-         <span className="block font-neue font-extrabold whitespace-nowrap">em um só lugar</span>
-        </h1>
+>
+        <span className="block font-neue font-extrabold whitespace-nowrap leading-none">Venda mais,</span>
+        <span className="block font-neue font-extrabold whitespace-nowrap leading-none">com menos complicação.</span>
+        <span className="block font-neue font-extrabold whitespace-nowrap leading-none">Tudo o que você precisa,</span>
+        <span className="block font-neue font-extrabold whitespace-nowrap leading-none">em um só lugar</span>
+    </h1>
           <p className="font-neue text-sm sm:text-base text-white text-center mb-6 sm:mb-8 max-w-xs sm:max-w-md mx-auto leading-normal font-normal px-4">
             A plataforma definitiva para a creator economy te ajuda a transformar seu conhecimento<br/>em negócio digital
           </p>  
