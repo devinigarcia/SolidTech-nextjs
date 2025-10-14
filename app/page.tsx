@@ -1,4 +1,5 @@
 import Hero from "./components/Hero";
+import MobileHero from "./components/MobileHero";
 import Features from "./components/Features";
 import Cases from "./components/Cases";
 import Testimonials from "./components/Testimonials";
@@ -9,6 +10,7 @@ export default function HomePage() {
   return (
     <>
       <Hero />
+      <MobileHero />
       <Features />
       <Cases />
       <Testimonials />

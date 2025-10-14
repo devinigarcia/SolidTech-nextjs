@@ -2,6 +2,7 @@ import { ReactNode } from "react";
 import type { Metadata } from "next";
 import "../styles/globals.css";
 import Header from "./components/Header";
+import MobileHeader from "./components/MobileHeader";
 import Footer from "./components/Footer";
 
 export const metadata: Metadata = {
@@ -84,6 +85,7 @@ export default function RootLayout({ children }: { children: ReactNode }) {
       </head>
       <body className="antialiased">
         <Header />
+        <MobileHeader />
         <main>{children}</main>
         <Footer />
       </body>

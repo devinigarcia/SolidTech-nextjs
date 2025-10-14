@@ -7,7 +7,7 @@ import Button from './ui/Button';
 import AnimatedSection from './ui/AnimatedSection';
 import CTAButton from './ui/CTAButton';
 
-export default function Hero() {
+export default function MobileHero() {
   const [currentVideoIndex, setCurrentVideoIndex] = useState(0);
   
   const videos = [
@@ -17,7 +17,7 @@ export default function Hero() {
   ];
 
   useEffect(() => {
-    const video = document.getElementById('hero-video') as HTMLVideoElement;
+    const video = document.getElementById('mobile-hero-video') as HTMLVideoElement;
     if (video) {
       const handleVideoEnd = () => {
         setCurrentVideoIndex((prevIndex) => 
@@ -34,10 +34,10 @@ export default function Hero() {
   }, [currentVideoIndex, videos.length]);
 
   return (
-    <section className="hidden md:flex relative min-h-screen items-center justify-center bg-black overflow-hidden">
+    <section className="md:hidden relative min-h-screen flex items-center justify-center bg-black overflow-hidden">
       {/* Fundo em vídeo */}
       <video
-        id="hero-video"
+        id="mobile-hero-video"
         src={videos[currentVideoIndex]}
         autoPlay
         loop={false}
@@ -52,19 +52,18 @@ export default function Hero() {
       {/* Overlay escura */}
       <div className="absolute inset-0 bg-black/60" />
 
-        <div className="relative z-10 text-center flex flex-col items-center justify-center px-4 mt-[-21rem] md:mt-[-4rem]">
-            <AnimatedSection direction="up" delay={0.4}>
-          <h1 className="headline-title font-neue font-bold text-2xl sm:text-3xl md:text-4xl lg:text-5xl xl:text-6xl tracking-tight leading-[1.2] text-center mb-2 px-4" style={{color: 'white', background: 'none', WebkitBackgroundClip: 'unset', WebkitTextFillColor: 'white', backgroundClip: 'unset', transform: 'scale(0.7586)'}}>
+      <div className="relative z-10 text-center flex flex-col items-center justify-center px-4 mt-[-21rem]">
+        <AnimatedSection direction="up" delay={0.4}>
+          <h1 className="headline-title font-neue font-bold text-2xl sm:text-3xl tracking-tight leading-[1.2] text-center mb-2 px-4" style={{color: 'white', background: 'none', WebkitBackgroundClip: 'unset', WebkitTextFillColor: 'white', backgroundClip: 'unset', transform: 'scale(0.7586)'}}>
             Venda mais, com menos complicação<br/>
             Tudo o que você precisa, em um só lugar
           </h1>
-          <p className="font-neue text-sm sm:text-base md:text-lg lg:text-xl text-white text-center mb-6 sm:mb-8 max-w-xs sm:max-w-md md:max-w-2xl lg:max-w-3xl mx-auto leading-normal font-normal px-4">
-            <span className="block md:hidden">A plataforma definitiva para a creator economy te ajuda a transformar seu conhecimento<br/>em negócio digital</span>
-            <span className="hidden md:block">A plataforma definitiva para a creator economy te ajuda a transformar seu<br/>conhecimento em negócio digital</span>
+          <p className="font-neue text-sm sm:text-base text-white text-center mb-6 sm:mb-8 max-w-xs sm:max-w-md mx-auto leading-normal font-normal px-4">
+            A plataforma definitiva para a creator economy te ajuda a transformar seu conhecimento<br/>em negócio digital
           </p>
-            </AnimatedSection>
+        </AnimatedSection>
 
-            <AnimatedSection direction="up" delay={0.6}>
+        <AnimatedSection direction="up" delay={0.6}>
           <CTAButton 
             variant="primary" 
             size="sm"
@@ -75,7 +74,7 @@ export default function Hero() {
           >
             Cadastre-se gratuitamente
           </CTAButton>
-            </AnimatedSection>
+        </AnimatedSection>
       </div>
     </section>
   );
