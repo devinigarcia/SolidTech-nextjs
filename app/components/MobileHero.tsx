@@ -1,34 +1,34 @@
-'use client';
+"use client";
 
-import { motion } from 'framer-motion';
-import { Play, Star, Users, Zap } from 'lucide-react';
-import { useState, useEffect } from 'react';
-import Button from './ui/Button';
-import AnimatedSection from './ui/AnimatedSection';
-import CTAButton from './ui/CTAButton';
+import { motion } from "framer-motion";
+import { Play, Star, Users, Zap } from "lucide-react";
+import { useState, useEffect } from "react";
+import Button from "./ui/Button";
+import AnimatedSection from "./ui/AnimatedSection";
+import CTAButton from "./ui/CTAButton";
 
 export default function MobileHero() {
   const [currentVideoIndex, setCurrentVideoIndex] = useState(0);
-  
+
   const videos = [
-    '/videos/PixVerse_V5_Image.mp4',
-    '/videos/PixVerse_V5_Image_Text_540P_Cena_3D_realista_m.mp4',
-    '/videos/PixVerse_V5_Image_Text_540P_Cena_3D_ultrareali.mp4'
+    "/videos/PixVerse_V5_Image.mp4",
+    "/videos/PixVerse_V5_Image_Text_540P_Cena_3D_realista_m.mp4",
+    "/videos/PixVerse_V5_Image_Text_540P_Cena_3D_ultrareali.mp4",
   ];
 
   useEffect(() => {
-    const video = document.getElementById('mobile-hero-video') as HTMLVideoElement;
+    const video = document.getElementById(
+      "mobile-hero-video"
+    ) as HTMLVideoElement;
     if (video) {
       const handleVideoEnd = () => {
-        setCurrentVideoIndex((prevIndex) => 
-          (prevIndex + 1) % videos.length
-        );
+        setCurrentVideoIndex((prevIndex) => (prevIndex + 1) % videos.length);
       };
 
-      video.addEventListener('ended', handleVideoEnd);
-      
+      video.addEventListener("ended", handleVideoEnd);
+
       return () => {
-        video.removeEventListener('ended', handleVideoEnd);
+        video.removeEventListener("ended", handleVideoEnd);
       };
     }
   }, [currentVideoIndex, videos.length]);
@@ -54,39 +54,56 @@ export default function MobileHero() {
 
       <div className="relative z-10 text-center flex flex-col items-center justify-center px-4 mt-[-21rem]">
         <AnimatedSection direction="up" delay={0.4}>
-        <h1
-        className="font-neue font-extrabold
+          <h1
+            className="font-neue font-extrabold
          text-[25px] sm:text-[33px] 
          text-center mb-2 px-4 
-         tracking-normal 
+         tracking-normal
          text-white 
-        " 
-        style={{
-            wordSpacing: '4.2px',
-            color: '#fff',
-            background: 'none',
-            WebkitBackgroundClip: 'unset',
-            backgroundClip: 'unset',
-            WebkitTextFillColor: '#fff'
-        }}
->
-        <span className="block leading-none mb-[3px] sm:mb-[7px] font-neue font-extrabold whitespace-nowrap leading-none">Venda mais,</span>
-        <span className="block leading-none mb-[3px] sm:mb-[7px] font-neue font-extrabold whitespace-nowrap leading-none">com menos complicação.</span>
-        <span className="block leading-none mb-[3px] sm:mb-[7px] font-neue font-extrabold whitespace-nowrap leading-none">Tudo o que você precisa,</span>
-        <span className="block leading-none mb-[3px] sm:mb-[7px] font-neue font-extrabold whitespace-nowrap leading-none">em um só lugar</span>
-    </h1>
+        "
+            style={{
+              wordSpacing: "4.2px",
+              color: "#fff",
+              background: "none",
+              WebkitBackgroundClip: "unset",
+              backgroundClip: "unset",
+              WebkitTextFillColor: "#fff",
+            }}
+          >
+            <span className="block leading-none mb-[3px] sm:mb-[7px] font-neue font-extrabold whitespace-nowrap leading-none">
+              Venda mais,
+            </span>
+            <span className="block leading-none mb-[3px] sm:mb-[7px] font-neue font-extrabold whitespace-nowrap leading-none">
+              com menos complicação.
+            </span>
+            <span className="block leading-none mb-[3px] sm:mb-[7px] font-neue font-extrabold whitespace-nowrap leading-none">
+              Tudo o que você precisa,
+            </span>
+            <span className="block leading-none mb-[3px] sm:mb-[7px] font-neue font-extrabold whitespace-nowrap leading-none">
+              em um só lugar
+            </span>
+          </h1>
           <p className="font-neue text-sm sm:text-base text-white text-center mb-6 sm:mb-8 max-w-xs sm:max-w-md mx-auto leading-normal font-normal px-4">
-            A plataforma definitiva para a creator economy te ajuda a transformar seu conhecimento<br/>em negócio digital
-          </p>  
+            A plataforma definitiva para a creator economy te ajuda a
+            transformar seu conhecimento
+            <br />
+            em negócio digital
+          </p>
         </AnimatedSection>
 
         <AnimatedSection direction="up" delay={0.6}>
-          <CTAButton 
-            variant="primary" 
+          <CTAButton
+            variant="primary"
             size="sm"
-            onClick={() => console.log('Cadastro iniciado')}
+            onClick={() => console.log("Cadastro iniciado")}
             className="group font-bold text-lg sm:text-xl"
-            style={{paddingTop: '0rem', paddingBottom: '0rem', paddingLeft: '0rem', paddingRight: '0rem', transform: 'scale(0.7)'}}
+            style={{
+              paddingTop: "0rem",
+              paddingBottom: "0rem",
+              paddingLeft: "0rem",
+              paddingRight: "0rem",
+              transform: "scale(0.7)",
+            }}
             textColor="white"
           >
             Cadastre-se gratuitamente
