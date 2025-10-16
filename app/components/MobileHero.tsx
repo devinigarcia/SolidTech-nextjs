@@ -94,10 +94,15 @@ export default function MobileHero() {
         <AnimatedSection direction="up" delay={0.6}>
           <CTAButton
             variant="primary"
-            size="sm"
+            size="lg"
             onClick={() => console.log("Cadastro iniciado")}
-            className="group font-bold text-lg sm:text-xl scale-75"
+            className="group font-bold text-2xl sm:text-3xl"
             textColor="white"
+            style={{
+              padding: "1rem 2rem", // padding mais adequado
+              fontSize: "1.75rem", // mantém a fonte grande (~text-2xl)
+              lineHeight: "1.2", // melhora proporção do texto
+            }}
           >
             Cadastre-se gratuitamente
           </CTAButton>
