@@ -99,9 +99,9 @@ export default function MobileHero() {
             className="group font-bold text-2xl sm:text-3xl"
             textColor="white"
             style={{
-              padding: "1rem 2rem", // padding mais adequado
-              fontSize: "1.75rem", // mantém a fonte grande (~text-2xl)
-              lineHeight: "1.2", // melhora proporção do texto
+              padding: "0.5rem 1rem", // botão ainda mais compacto
+              fontSize: "1rem", // fonte mantida como está
+              lineHeight: "1.1", // proporção compacta
             }}
           >
             Cadastre-se gratuitamente
