@@ -34,7 +34,7 @@ export default function MobileHero() {
   }, [currentVideoIndex, videos.length]);
 
   return (
-    <section className="md:hidden relative min-h-screen flex items-center justify-center bg-black overflow-hidden">
+    <section className="md:hidden relative min-h-screen flex items-center justify-center bg-black overflow-hidden w-full">
       {/* Fundo em vídeo */}
       <video
         id="mobile-hero-video"
@@ -52,7 +52,7 @@ export default function MobileHero() {
       {/* Overlay escura */}
       <div className="absolute inset-0 bg-black/60" />
 
-      <div className="relative z-10 text-center flex flex-col items-center justify-center px-4 mt-[-21rem]">
+      <div className="relative z-10 text-center flex flex-col items-center justify-center px-4 mt-[-21rem] w-full max-w-full">
         <AnimatedSection direction="up" delay={0.4}>
           <h1
             className="font-neue font-extrabold
@@ -62,7 +62,7 @@ export default function MobileHero() {
          text-white 
         "
             style={{
-              wordSpacing: "4.2px",
+              wordSpacing: "0px",
               color: "#fff",
               background: "none",
               WebkitBackgroundClip: "unset",
@@ -70,16 +70,16 @@ export default function MobileHero() {
               WebkitTextFillColor: "#fff",
             }}
           >
-            <span className="block leading-none mb-[3px] sm:mb-[7px] font-neue font-extrabold whitespace-nowrap leading-none">
+            <span className="block leading-none mb-[3px] sm:mb-[7px] font-neue font-extrabold leading-none">
               Venda mais,
             </span>
-            <span className="block leading-none mb-[3px] sm:mb-[7px] font-neue font-extrabold whitespace-nowrap leading-none">
+            <span className="block leading-none mb-[3px] sm:mb-[7px] font-neue font-extrabold leading-none">
               com menos complicação.
             </span>
-            <span className="block leading-none mb-[3px] sm:mb-[7px] font-neue font-extrabold whitespace-nowrap leading-none">
+            <span className="block leading-none mb-[3px] sm:mb-[7px] font-neue font-extrabold leading-none">
               Tudo o que você precisa,
             </span>
-            <span className="block leading-none mb-[3px] sm:mb-[7px] font-neue font-extrabold whitespace-nowrap leading-none">
+            <span className="block leading-none mb-[3px] sm:mb-[7px] font-neue font-extrabold leading-none">
               em um só lugar
             </span>
           </h1>
@@ -96,14 +96,7 @@ export default function MobileHero() {
             variant="primary"
             size="sm"
             onClick={() => console.log("Cadastro iniciado")}
-            className="group font-bold text-lg sm:text-xl"
-            style={{
-              paddingTop: "0rem",
-              paddingBottom: "0rem",
-              paddingLeft: "0rem",
-              paddingRight: "0rem",
-              transform: "scale(0.7)",
-            }}
+            className="group font-bold text-lg sm:text-xl scale-75"
             textColor="white"
           >
             Cadastre-se gratuitamente

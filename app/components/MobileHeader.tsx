@@ -1,4 +1,4 @@
-'use client';
+"use client";
 
 import Link from "next/link";
 import { useState } from "react";
@@ -8,10 +8,10 @@ export default function MobileHeader() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
 
   const navigation = [
-    { name: 'Início', href: '/' },
-    { name: 'Newsletter', href: '/newsletter' },
-    { name: 'Suporte', href: '/suporte' },
-    { name: 'Sobre nós', href: '/sobre' },
+    { name: "Início", href: "/" },
+    { name: "Newsletter", href: "/newsletter" },
+    { name: "Suporte", href: "/suporte" },
+    { name: "Sobre nós", href: "/sobre" },
   ];
 
   return (
@@ -21,7 +21,10 @@ export default function MobileHeader() {
         <div className="flex items-center justify-between px-6 py-4 h-16">
           {/* Logo */}
           <Link href="/" className="flex items-center">
-            <span className="font-mono font-bold text-white text-xl tracking-wider" style={{fontFamily: 'monospace, Courier New, monospace'}}>
+            <span
+              className="font-mono font-bold text-white text-xl tracking-wider"
+              style={{ fontFamily: "monospace, Courier New, monospace" }}
+            >
               SOLID
             </span>
           </Link>
@@ -47,15 +50,24 @@ export default function MobileHeader() {
 
       {/* Mobile Navigation - Full Screen */}
       {isMenuOpen && (
-        <div className="md:hidden fixed inset-0 z-50" style={{zIndex: 10000}}>
+        <div className="md:hidden fixed inset-0 z-50" style={{ zIndex: 10000 }}>
           {/* Fundo preto apenas na metade superior */}
-          <div className="fixed top-0 left-0 right-0 bg-black" style={{backgroundColor: '#000000', height: 'calc(50vh - 5.9rem)'}}></div>
-          
+          <div
+            className="fixed top-0 left-0 right-0 bg-black"
+            style={{
+              backgroundColor: "#000000",
+              height: "calc(50vh - 5.9rem)",
+            }}
+          ></div>
+
           {/* Conteúdo do menu */}
           <div className="relative z-10">
             {/* Header do menu */}
             <div className="flex items-center justify-between p-6">
-              <span className="font-mono font-bold text-white text-xl tracking-wider" style={{fontFamily: 'monospace, Courier New, monospace'}}>
+              <span
+                className="font-mono font-bold text-white text-xl tracking-wider"
+                style={{ fontFamily: "monospace, Courier New, monospace" }}
+              >
                 SOLID
               </span>
               <button
@@ -67,7 +79,10 @@ export default function MobileHeader() {
             </div>
 
             {/* Conteúdo do menu */}
-            <div className="flex flex-col items-center justify-center h-screen px-6 space-y-6 pb-20" style={{ transform: 'translateY(-17rem)' }}>
+            <div
+              className="flex flex-col items-center justify-center h-screen px-6 space-y-6 pb-20"
+              style={{ transform: "translateY(-17rem)" }}
+            >
               {/* Links de navegação */}
               <div className="space-y-4 text-center">
                 {navigation.map((item) => (
@@ -93,8 +108,8 @@ export default function MobileHeader() {
               <div className="space-y-0.5 text-center">
                 <Link
                   href="/cadastro"
-                  className="block text-white px-32 py-3 rounded-full font-bold text-sm transition-colors"
-                  style={{backgroundColor: '#fdb927'}}
+                  className="block text-white px-8 sm:px-16 md:px-32 py-3 rounded-full font-bold text-sm transition-colors"
+                  style={{ backgroundColor: "#fdb927" }}
                   onClick={() => setIsMenuOpen(false)}
                 >
                   Cadastre-se
